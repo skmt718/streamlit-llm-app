@@ -1,9 +1,9 @@
 import os
 import streamlit as st
 
-# LangChainのインポート（互換構文）
-from langchain.prompts import ChatPromptTemplate
-from langchain.schema import StrOutputParser
+# LangChainのインポート（0.3.x対応）
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 
 APP_TITLE = "LLM Expert Switcher (A/B)"
@@ -51,7 +51,10 @@ st.title(APP_TITLE)
 st.write(APP_DESC)
 
 st.sidebar.header("専門家モード")
-expert_choice = st.sidebar.radio("選択してください", ["A", "B"], horizontal=True)
+expert_display = st.sidebar.radio("選択してください", ["経営戦略", "データ分析"], horizontal=True)
+
+# 表示名をA/Bに変換
+expert_choice = "A" if expert_display == "経営戦略" else "B"
 
 user_text = st.text_area("質問を入力", height=150)
 if st.button("送信"):
