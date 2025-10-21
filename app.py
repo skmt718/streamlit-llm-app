@@ -27,13 +27,6 @@ class AppConfig:
 - **A**: 経営・事業戦略の専門家として回答  
 - **B**: データ分析・機械学習の専門家として回答
 
-※ 本アプリの実行には OpenAI API キーが必要です。Streamlit Community Cloud では `secrets` に `OPENAI_API_KEY` を設定してください。
-"""
-
-    FOOTER_TEXT = (
-        "開発: Streamlit × LangChain。ソースコードは単一ファイル `app.py`。"
-        " 右上メニューから"Always rerun"を有効化すると、編集後に自動リロードされます。"
-    )
 
     PLACEHOLDER_TEXT = (
         "例：新規D2Cの立ち上げで、初月の集客戦略を考えてください（A）／\n"
